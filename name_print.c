@@ -207,13 +207,24 @@ void print(int size, char *word){
 }
 int main(){
     int size;
-    printf("Write the word's size : ");
+    printf("Write your name's size : ");
     scanf("%d", &size);
     char *word = (char*) malloc(sizeof(char) * size);
-    printf("Write the word : ");
+    char *word_og = (char*) malloc(sizeof(char) * size);
+    printf("Write your name : ");
     scanf("%s", word);
+    for(int i = 0; i < size; i++){
+        word_og[i] = word[i];
+    }
     printf("\n");
     make_capital(size, &word);
     print(size, word);
+    printf("\nWrite your ID : ");
+    int id;
+    scanf("%d", &id);
+    char uni_name[100];
+    printf("Write your university name : ");
+    scanf("%s", uni_name);
+    printf("%d_%s_%s", id, uni_name, word_og);
     return 0;
 }
