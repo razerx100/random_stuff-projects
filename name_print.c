@@ -220,11 +220,12 @@ int main(){
     make_capital(size, &word);
     print(size, word);
     printf("\nWrite your ID : ");
-    int id;
-    scanf("%d", &id);
+    char id[100];
+    scanf("%s", id);
     char uni_name[100];
     printf("Write your university name : ");
-    scanf("%s", uni_name);
-    printf("%d_%s_%s", id, uni_name, word_og);
+    getchar();
+    scanf("%[^\n]", uni_name);
+    printf("%s_%s_%s", id, uni_name, word_og);
     return 0;
 }
